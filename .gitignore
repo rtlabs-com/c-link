@@ -1,0 +1,8 @@
+# Sampleapp dummy LED files
+sampleapp_led*.txt
+
+# Sampleapp dummy button files (typically named by user)
+*button*.txt
+
+# Persistent data storage
+clm_data*.bin

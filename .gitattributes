@@ -1,0 +1,8 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Do not perform LF normalization on bash scripts
+*.service text eol=lf
+*.raspberrypi text eol=lf
+bin/set_ip_address_netmask text eol=lf
+bin/set_cclink_leds text eol=lf

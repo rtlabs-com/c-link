@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+############################################
+# Script for manipulating network settings #
+############################################
+#
+# This is useful for example on Ubuntu.
+#
+# You need to adapt this script to fit your Linux distribution.
+# Keep the script name, and use the same command line arguments.
+#
+# Make sure that the script path is available from your CC-Link application.
+# In case of problems, try the script manually from the directory where your
+# application is located.
+
+if [ $# -ne 3 ]; then
+   echo "Usage: ${0} interfacename ip netmask"
+   echo "   where:"
+   echo "       interfacename:   Network interface name, for example eth0"
+   echo "       ip:              IPv4 address, for example 192.168.0.50"
+   echo "       netmask:         Netmask, for example 255.255.255.0"
+   exit 1
+fi
+
+INTERFACE=$1
+IP_ADDRESS=$2
+NETMASK=$3
+
+echo "Network script for ${INTERFACE}: " \
+   "Set IP ${IP_ADDRESS}  " \
+   "Netmask ${NETMASK}  "
+
+if ! ip address flush label $INTERFACE; then
+   echo "Failed to flush network interface"
+   exit 1
+fi
+
+if ! ip address add $IP_ADDRESS/$NETMASK dev $INTERFACE; then
+   echo "Failed to set IP address and netmask"
+   exit 1
+fi
+
+if ! ip link set dev $INTERFACE up; then
+   echo "Failed to set network interface up"
+   exit 1
+fi
+
+exit 0
