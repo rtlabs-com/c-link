@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<p:profile xsi:schemaLocation="http://cc-link.org/cspplus/ver2/ CSPPSchema.xsd"
+    xmlns:p="http://cc-link.org/cspplus/ver2/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <p:file label="FileSection">
+        <p:fileInfo label="FileInfo">
+            <p:fileInfoMember label="CreateDate">
+                <p:label2>
+                    <p:item>CreateDate</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>CreateDate</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(10)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>2022/12/20</p:item>
+                </p:data>
+            </p:fileInfoMember>
+            <p:fileInfoMember label="CreateTime">
+                <p:label2>
+                    <p:item>CreateTime</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>CreateTime</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(8)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>18:42:23</p:item>
+                </p:data>
+            </p:fileInfoMember>
+            <p:fileInfoMember label="ModDate">
+                <p:label2>
+                    <p:item>ModDate</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>ModDate</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(10)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>2022/12/20</p:item>
+                </p:data>
+            </p:fileInfoMember>
+            <p:fileInfoMember label="ModTime">
+                <p:label2>
+                    <p:item>ModTime</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>ModTime</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(8)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>18:42:23</p:item>
+                </p:data>
+            </p:fileInfoMember>
+            <p:fileInfoMember label="Language">
+                <p:label2>
+                    <p:item>Language</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Language</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(12)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>en</p:item>
+                </p:data>
+            </p:fileInfoMember>
+            <p:fileInfoMember label="FileVersion">
+                <p:label2>
+                    <p:item>FileVersion</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>FileVersion</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(32)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>1.0</p:item>
+                </p:data>
+            </p:fileInfoMember>
+            <p:fileInfoMember label="CCLinkFamilyProfileVersion">
+                <p:label2>
+                    <p:item>CCLinkFamilyProfileVersion</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>CSP+ specification version</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(32)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>2.2</p:item>
+                </p:data>
+            </p:fileInfoMember>
+        </p:fileInfo>
+    </p:file>
+    <p:device label="DeviceSection">
+        <p:deviceInfo label="DeviceInfo">
+            <p:deviceInfoMember label="VendorName">
+                <p:label2>
+                    <p:item>VendorName</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>VendorName</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING_U(64)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>RT-Labs</p:item>
+                </p:data>
+            </p:deviceInfoMember>
+            <p:deviceInfoMember label="VendorCode">
+                <p:label2>
+                    <p:item>VendorCode</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>VendorCode</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>WORD</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0x1067</p:item>
+                </p:data>
+            </p:deviceInfoMember>
+            <p:deviceInfoMember label="DeviceModel">
+                <p:label2>
+                    <p:item>DeviceModel</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>DeviceModel</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(48)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>Sampleapp</p:item>
+                </p:data>
+            </p:deviceInfoMember>
+            <p:deviceInfoMember label="ProductID">
+                <p:label2>
+                    <p:item>ProductID</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>ProductID</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(256)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0x87654321</p:item>
+                </p:data>
+            </p:deviceInfoMember>
+            <p:deviceInfoMember label="DeviceTypeID">
+                <p:label2>
+                    <p:item>DeviceTypeID</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>DeviceTypeID</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>WORD</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0x03</p:item>
+                </p:data>
+            </p:deviceInfoMember>
+            <p:deviceInfoMember label="Version">
+                <p:label2>
+                    <p:item>Version</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Version</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>WORD</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0x0002</p:item>
+                </p:data>
+            </p:deviceInfoMember>
+            <p:deviceInfoMember label="VersionDisplayFlg">
+                <p:label2>
+                    <p:item>VersionDisplayFlg</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>VersionDisplayFlg</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>1</p:item>
+                </p:data>
+            </p:deviceInfoMember>
+            <p:deviceInfoMember label="VersionPolicyType">
+                <p:label2>
+                    <p:item>VersionPolicyType</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>VersionPolicyType</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>UINT16</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0</p:item>
+                </p:data>
+            </p:deviceInfoMember>
+        </p:deviceInfo>
+    </p:device>
+    <p:block label="BlockSection">
+        <p:blockInfo label="BlockInfo">
+            <p:blockInfoMember label="VendorName">
+                <p:label2>
+                    <p:item>VendorName</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>VendorName</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING_U(64)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>RT-Labs</p:item>
+                </p:data>
+            </p:blockInfoMember>
+            <p:blockInfoMember label="VendorCode">
+                <p:label2>
+                    <p:item>VendorCode</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>VendorCode</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>WORD</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0x1067</p:item>
+                </p:data>
+            </p:blockInfoMember>
+            <p:blockInfoMember label="Version">
+                <p:label2>
+                    <p:item>Version</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Version</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>WORD</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0x0002</p:item>
+                </p:data>
+            </p:blockInfoMember>
+        </p:blockInfo>
+        <p:blockInput label="BlockInput">
+            <p:blockInputMember label="RY10">
+                <p:name>
+                    <p:item>LED</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+            </p:blockInputMember>
+            <p:blockInputMember label="RWw0">
+                <p:name>
+                    <p:item>Arbitraty integer from the PLC</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>UINT16</p:item>
+                </p:datatype>
+            </p:blockInputMember>
+        </p:blockInput>
+        <p:blockOutput label="BlockOutput">
+            <p:blockOutputMember label="RX0">
+                <p:name>
+                    <p:item>Button</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+            </p:blockOutputMember>
+            <p:blockOutputMember label="RWr0">
+                <p:name>
+                    <p:item>Button press counter</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>UINT16</p:item>
+                </p:datatype>
+            </p:blockOutputMember>
+        </p:blockOutput>
+        <p:blockCommand label="BlockCommand">
+            <p:blockCommandMember label="GetStatusCommand">
+                <p:name>
+                    <p:item>Status Code Acquisition Command</p:item>
+                </p:name>
+                <p:argument>
+                    <p:item>StatusArgument</p:item>
+                </p:argument>
+            </p:blockCommandMember>
+        </p:blockCommand>
+        <p:enum label="EnumStatusCode">
+            <p:enumMember label="enum1">
+                <p:name>
+                    <p:item>Wire break</p:item>
+                </p:name>
+                <p:code>
+                    <p:item>0x0301</p:item>
+                </p:code>
+                <p:comment>
+                    <p:item>Wire break detected. Check all wires.</p:item>
+                </p:comment>
+            </p:enumMember>
+            <p:enumMember label="enum2">
+                <p:name>
+                    <p:item>Slave overtemperature</p:item>
+                </p:name>
+                <p:code>
+                    <p:item>0x0302</p:item>
+                </p:code>
+                <p:comment>
+                    <p:item>Slave temperature is too high</p:item>
+                </p:comment>
+            </p:enumMember>
+        </p:enum>
+        <p:commandArgument label="StatusArgument">
+            <p:commandArgumentMember label="StatusCode">
+                <p:name>
+                    <p:item>Status Code</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>WORD</p:item>
+                </p:datatype>
+                <p:range>
+                    <p:enumRefItem>EnumStatusCode</p:enumRefItem>
+                </p:range>
+                <p:access>
+                    <p:item>R</p:item>
+                </p:access>
+            </p:commandArgumentMember>
+        </p:commandArgument>
+    </p:block>
+    <p:commIf label="CommIf_Basic">
+        <p:commIfInfo label="CommIfInfo">
+            <p:commIfInfoMember label="VendorName">
+                <p:label2>
+                    <p:item>VendorName</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>VendorName</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING_U(64)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>RT-Labs</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="VendorCode">
+                <p:label2>
+                    <p:item>VendorCode</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>VendorCode</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>WORD</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0x1067</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="CommIFTypeID">
+                <p:label2>
+                    <p:item>CommIFTypeID</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Communication Interface Type ID</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(32)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>Ethernet</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="Version">
+                <p:label2>
+                    <p:item>Version</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Version</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>WORD</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0x0002</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="ReadVersionType">
+                <p:label2>
+                    <p:item>ReadVersionType</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Read device version type</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(128)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>MachineVersion</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportIPAddressSize">
+                <p:label2>
+                    <p:item>SupportIPAddressSize</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support IP Address Size</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>UINT16()</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>4</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="TimeOutValue">
+                <p:label2>
+                    <p:item>TimeOutValue</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>TimeOutValue</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>UINT16</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>10000</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportFlg_SearchNode">
+                <p:label2>
+                    <p:item>SupportFlg_SearchNode</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support Flag SearchNode</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>1</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportFlg_SetIPAddress">
+                <p:label2>
+                    <p:item>SupportFlg_SetIPAddress</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support Flag SetIPAddress</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>1</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportFlg_CompareDeviceInfo">
+                <p:label2>
+                    <p:item>SupportFlg_CompareDeviceInfo</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support Flag CompareDeviceInfo</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportFlg_GetParam">
+                <p:label2>
+                    <p:item>SupportFlg_GetParam</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support Flag GetParam</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportFlg_SetParam">
+                <p:label2>
+                    <p:item>SupportFlg_SetParam</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support Flag SetParam</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportFlg_StartSetParam">
+                <p:label2>
+                    <p:item>SupportFlg_StartSetParam</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support Flag StartSetParam</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportFlg_EndSetParam">
+                <p:label2>
+                    <p:item>SupportFlg_EndSetParam</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support Flag EndSetParam</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportFlg_CancelSetParam">
+                <p:label2>
+                    <p:item>SupportFlg_CancelSetParam</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support Flag CancelSetParam</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportFlg_ReadStatus">
+                <p:label2>
+                    <p:item>SupportFlg_ReadStatus</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support Flag ReadStatus</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportFlg_GetCommSetting">
+                <p:label2>
+                    <p:item>SupportFlg_GetCommSetting</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support Flag GetCommSetting</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="SupportFlg_ReadStatus2">
+                <p:label2>
+                    <p:item>SupportFlg_ReadStatus2</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Support Flag ReadStatus2</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="DevModel">
+                <p:label2>
+                    <p:item>ModelName</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>ModelName (TypeName)</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>STRING(48)</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>Sampleapp</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="NumOccupiedStations">
+                <p:label2>
+                    <p:item>NumOccupiedStation</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Number of occupied station</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>UINT16</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>1</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="CCIEFBasicProtocolVersion">
+                <p:label2>
+                    <p:item>CCIEFBasicProtocolVersion</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>CCIE FBasic Protocol Version</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>UINT16</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>2</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+            <p:commIfInfoMember label="EthernetCommFunction">
+                <p:label2>
+                    <p:item>EthernetCommunicationFunction</p:item>
+                </p:label2>
+                <p:category>
+                    <p:item>COMMON_Ethernet</p:item>
+                </p:category>
+                <p:name>
+                    <p:item>Ethernet Communication Function</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>DWORD</p:item>
+                </p:datatype>
+                <p:data>
+                    <p:item>0x00000002</p:item>
+                </p:data>
+            </p:commIfInfoMember>
+        </p:commIfInfo>
+        <p:commIfInput label="CommIfInput">
+            <p:commIfInputMember label="RX0">
+                <p:name>
+                    <p:item>Button</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:access>
+                    <p:item>RF</p:item>
+                </p:access>
+                <p:assign>
+                    <p:item>RX0</p:item>
+                </p:assign>
+                <p:ref>
+                    <p:item>BlockSection.BlockOutput.RX0</p:item>
+                </p:ref>
+            </p:commIfInputMember>
+            <p:commIfInputMember label="RWr0">
+                <p:name>
+                    <p:item>Buttton press counter</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>UINT16</p:item>
+                </p:datatype>
+                <p:access>
+                    <p:item>RF</p:item>
+                </p:access>
+                <p:assign>
+                    <p:item>RWr0</p:item>
+                </p:assign>
+                <p:ref>
+                    <p:item>BlockSection.BlockOutput.RWr0</p:item>
+                </p:ref>
+            </p:commIfInputMember>
+        </p:commIfInput>
+        <p:commIfOutput label="CommIfOutput">
+            <p:commIfOutputMember label="RY10">
+                <p:name>
+                    <p:item>LED</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>BOOL</p:item>
+                </p:datatype>
+                <p:access>
+                    <p:item>RF</p:item>
+                </p:access>
+                <p:assign>
+                    <p:item>RY16</p:item>
+                </p:assign>
+                <p:ref>
+                    <p:item>BlockSection.BlockInput.RY10</p:item>
+                </p:ref>
+            </p:commIfOutputMember>
+            <p:commIfOutputMember label="RWw0">
+                <p:name>
+                    <p:item>Arbitrary integer from PLC</p:item>
+                </p:name>
+                <p:datatype>
+                    <p:item>UINT16</p:item>
+                </p:datatype>
+                <p:access>
+                    <p:item>RF</p:item>
+                </p:access>
+                <p:assign>
+                    <p:item>RWw0</p:item>
+                </p:assign>
+                <p:ref>
+                    <p:item>BlockSection.BlockInput.RWw0</p:item>
+                </p:ref>
+            </p:commIfOutputMember>
+        </p:commIfOutput>
+        <p:commIfCommand label="CCLinkCommand">
+            <p:commIfCommandMember label="P_GetStatusCommand">
+                <p:name>
+                    <p:item>Status Code Acquisition Command</p:item>
+                </p:name>
+                <p:ref>
+                    <p:item>BlockSection.BlockCommand.GetStatusCommand</p:item>
+                </p:ref>
+            </p:commIfCommandMember>
+        </p:commIfCommand>
+    </p:commIf>
+</p:profile>

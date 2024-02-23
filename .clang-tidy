@@ -1,0 +1,66 @@
+# Clang-tidy overview found in https://clang.llvm.org/extra/clang-tidy/
+# For description of test cases, see https://clang.llvm.org/extra/clang-tidy/checks/list.html
+#
+# List generated with clang-tidy 10.0.0
+# Updated for use with clang-tidy 16
+#
+# Do not use in-line comments
+#
+# Note:
+# We use the compiler to detect uninitialized use, instead of "cppcoreguidelines-init-variables"
+---
+Checks: "abseil-*,
+  android-*,
+  boost-*,
+  bugprone-*,
+  -bugprone-easily-swappable-parameters,
+  cert-*,
+  clang-analyzer-*,
+  clang-diagnostic-*,
+  concurrency-*,
+  -concurrency-mt-unsafe,
+  cppcoreguidelines-*,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-init-variables,
+  darwin-*,
+  fuchsia-*,
+  google-*,
+  hicpp-*,
+  -hicpp-signed-bitwise,
+  linuxkernel-*,
+  llvm-*,
+  misc-*,
+  -misc-unused-parameters,
+  modernize-*,
+  -modernize-use-trailing-return-type,
+  -modernize-macro-to-enum,
+  mpi-*,
+  objc-*,
+  openmp-*,
+  performance-*,
+  portability-*,
+  readability-*,
+  -readability-identifier-length,
+  -readability-magic-numbers,
+  zircon-*"
+WarningsAsErrors: "*"
+HeaderFilterRegex: "^cl"
+AnalyzeTemporaryDtors: false
+FormatStyle: none
+User: user
+CheckOptions:
+  - key: readability-function-cognitive-complexity.Threshold
+    value: "150"
+  - key: readability-function-size.StatementThreshold
+    value: "1600"
+  - key: hicpp-function-size.StatementThreshold
+    value: "1600"
+  - key: google-readability-function-size.StatementThreshold
+    value: "1600"
+  - key: bugprone-reserved-identifier.AllowedIdentifiers
+    value: "_GNU_SOURCE"
+  - key: cert-dcl37-c.AllowedIdentifiers
+    value: "_GNU_SOURCE"
+  - key: cert-dcl51-cpp.AllowedIdentifiers
+    value: "_GNU_SOURCE"
+---

@@ -1,3 +1,60 @@
+build*/
+env/
+*~
+*#
+CMakeFiles/
+CMakeCache.txt
+install
+
+.cproject
+.project
+.dir-locals.el
+
+# Python files
+docs/.mypy_cache/
+docs/_generated/
+docs/__pycache__/
+*env*
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Profiling, fuzz testing
+*.profraw
+*.profdata
+*.html
+
+# Editor files
+.vscode/
+.vs/
+
 # Sampleapp dummy LED files
 sampleapp_led*.txt
 
@@ -6,3 +63,7 @@ sampleapp_led*.txt
 
 # Persistent data storage
 clm_data*.bin
+
+# Packaged files
+*.zip
+*.bz2

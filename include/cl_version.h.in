@@ -1,0 +1,40 @@
+/*********************************************************************
+ *        _       _         _
+ *  _ __ | |_  _ | |  __ _ | |__   ___
+ * | '__|| __|(_)| | / _` || '_ \ / __|
+ * | |   | |_  _ | || (_| || |_) |\__ \
+ * |_|    \__|(_)|_| \__,_||_.__/ |___/
+ *
+ * www.rt-labs.com
+ * Copyright 2022 rt-labs AB, Sweden. All rights reserved.
+ *
+ * See the file LICENSE.md distributed with this software for full
+ * license information.
+ ********************************************************************/
+ 
+#ifndef CL_VERSION_H
+#define CL_VERSION_H
+
+#cmakedefine CLINK_GIT_REVISION "@CLINK_GIT_REVISION@"
+
+#if !defined(CL_VERSION_BUILD) && defined(CLINK_GIT_REVISION)
+#define CL_VERSION_BUILD CLINK_GIT_REVISION
+#endif
+
+/* clang-format-off */
+
+#define CL_VERSION_MAJOR @CLINK_VERSION_MAJOR@
+#define CL_VERSION_MINOR @CLINK_VERSION_MINOR@
+#define CL_VERSION_PATCH @CLINK_VERSION_PATCH@
+
+#if defined(CL_VERSION_BUILD)
+#define CL_VERSION \
+   "@CLINK_VERSION_MAJOR@.@CLINK_VERSION_MINOR@.@CLINK_VERSION_PATCH@+"CL_VERSION_BUILD
+#else
+#define CL_VERSION \
+   "@CLINK_VERSION_MAJOR@.@CLINK_VERSION_MINOR@.@CLINK_VERSION_PATCH@"
+#endif
+
+/* clang-format-on */
+
+#endif /* CL_VERSION_H */

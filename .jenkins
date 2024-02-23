@@ -1,0 +1,199 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('build-gcc-coverage') {
+         steps {
+            // Ensure clean build
+            sh 'rm -fr build.coverage'
+
+            // Configure and build
+            sh 'cmake -B build.coverage -S . -DCMAKE_BUILD_TYPE=Coverage'
+            sh 'cmake --build build.coverage -j4'
+         }
+      }
+      stage('test-gcc-coverage') {
+         steps {
+            dir('build.coverage') {
+               // Run tests and report coverage in XML files
+               sh './cl_test --gtest_output=xml:test-results.xml'
+               sh "gcovr --xml -o coverage.xml " +
+                  "--object-directory . " +
+                  "--root $WORKSPACE/src " +
+                  "--exclude $WORKSPACE/src/ports"
+
+               // Report converage in HTML files
+               // TODO Enable cmake coverage-report when gcovr is >=5.1 on Jenkins
+            }
+         }
+      }
+      stage('build-rtk-integrator') {
+         steps {
+            // Ensure clean build
+            sh 'rm -fr build.integrator'
+
+            // Configure and build
+            sh "RTK=/opt/rt-tools/rt-kernel-arm9e BSP=integrator cmake " +
+               "-B build.integrator " +
+               "-S . " +
+               "-DCMAKE_TOOLCHAIN_FILE=cmake/tools/toolchain/rt-kernel.cmake"
+            sh 'cmake --build build.integrator -j4'
+         }
+      }
+      stage('get project version') {
+         steps {
+            dir('build.integrator') {
+               script {
+                  def systemInformation = sh(script: 'cmake --system-information', returnStdout: true)
+                  def versionLine = systemInformation =~ /CMAKE_PROJECT_VERSION:STATIC=(.*)/
+                  if (versionLine) {
+                     env.PROJECT_VERSION = versionLine[0][1].trim()
+                  }
+               }
+            }
+         }
+      }
+      stage('test-rtk-integrator') {
+         steps {
+            dir('build.integrator') {
+               sh "/opt/rt-tools/qemu/bin/qemu-system-arm " +
+                  "-M integratorcp " +
+                  "-nographic " +
+                  "-semihosting " +
+                  "-kernel cl_test.elf " +
+                  "-append \"--gtest_output=xml:/fs/test-results.xml\" "
+            }
+         }
+      }
+      stage('build-clang') {
+         steps {
+            // Ensure clean build
+            sh 'rm -fr build.clang'
+
+            // Configure and build
+            sh 'CC=clang CXX=clang++ cmake -B build.clang -S .'
+            sh 'cmake --build build.clang -j4'
+         }
+      }
+      stage('build-fuzz') {
+         steps {
+            // Ensure clean build
+            sh "rm -fr build.fuzz"
+
+            // Configure and build, to verify that the fuzzing binaries compile
+            sh "CC=clang CXX=clang++ cmake " +
+               "-B build.fuzz " +
+               "-DBUILD_FUZZ=ON " +
+               "-DCMAKE_BUILD_TYPE=Debug " +
+               "-S ."
+            sh "cmake --build build.fuzz -j4"
+         }
+      }
+      stage('clang-format') {
+         steps {
+            // Verify source formatting
+            // TODO Add  --Werror  to do actual checking
+            sh "clang-format-14 -n  " +
+               "src/**/*.c " +
+               "src/**/*.h " +
+               "test/*.cpp " +
+               "test/*.h " +
+               "include/*.h " +
+               "fuzz/*.c " +
+               "sample_apps/*.c " +
+               "sample_apps/*.h"
+         }
+      }
+      stage('build-docs') {
+         steps {
+            // Ensure clean build
+            sh 'rm -fr build.docs sphinx-html.zip'
+
+            // Build documentation
+            withPythonEnv('python3') {
+               sh 'pip install -r docs/requirements.txt'
+               sh 'mkdir -p docs/_generated'
+               sh 'cmake --preset docs'
+               sh 'cmake --build --preset docs'
+               publishHTML([
+                  allowMissing: false,
+                  alwaysLinkToLastBuild: false,
+                  keepAll: false,
+                  reportDir: 'build.docs/docs/sphinx/html/',
+                  reportFiles: 'index.html',
+                  reportName: 'Documentation'])
+
+               zip(dir: 'build.docs/docs/sphinx',
+                  glob: 'html/**',
+                  zipFile: 'sphinx-html.zip'
+               )
+               stash(
+                  name: "sphinx-html",
+                  includes: 'sphinx-html.zip'
+               )
+            }
+         }
+      }
+      stage('clang-tidy') {
+         steps {
+            // Ensure clean build
+            sh "rm -fr build.tidy"
+
+            // Run static code analysis
+            sh "cmake -B build.tidy -S ."
+            sh "run-clang-tidy-15 -p build.tidy/ cl[ams_]"
+         }
+      }
+      stage('clang-tidy testcode') {
+         steps {
+            // Ensure clean build
+            sh "rm -fr build.tidytestcode"
+
+            // Run static code analysis
+            sh "cmake -B build.tidytestcode -S ."
+            sh "run-clang-tidy-15 -p build.tidytestcode/ /test/"
+         }
+      }
+      stage('publish') {
+         when {
+            environment name: "GERRIT_EVENT_TYPE", value: "change-merged"
+         }
+         steps {
+            unstash(name: "sphinx-html")
+            nexusArtifactUploader(
+               nexusVersion: "nexus2",
+               protocol: "http",
+               nexusUrl: "qa.rt-labs.intra:8081/nexus",
+               groupId: "rt-labs.c-link",
+               version: "${env.PROJECT_VERSION}-SNAPSHOT",
+               repository: "snapshots",
+               credentialsId: "nexus-admin-credentials",
+               artifacts: [
+                  [artifactId: "c-link-docs",
+                     classifier: "",
+                     file: "sphinx-html.zip",
+                     type: "zip"]
+               ]
+            )
+         }
+      }
+   }
+   post {
+      always {
+         junit 'build.coverage/test-results.xml'
+
+         cobertura autoUpdateHealth: false,
+            autoUpdateStability: false,
+            coberturaReportFile: '**/coverage.xml',
+            conditionalCoverageTargets: '100, 100, 0',
+            lineCoverageTargets: '100, 100, 0',
+            enableNewApi: false,
+            failNoReports: true,
+            failUnhealthy: true,
+            failUnstable: false,
+            maxNumberOfBuilds: 0,
+            sourceEncoding: 'ASCII',
+            zoomCoverageChart: false
+      }
+   }
+}

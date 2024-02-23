@@ -6,11 +6,10 @@
  * |_|    \__|(_)|_| \__,_||_.__/ |___/
  *
  * www.rt-labs.com
- * Copyright 2022 rt-labs AB, Sweden.
+ * Copyright 2022 rt-labs AB, Sweden. All rights reserved.
  *
- * This software is dual-licensed under GPLv3 and a commercial
- * license. See the file LICENSE.md distributed with this software for
- * full license information.
+ * See the file LICENSE.md distributed with this software for full
+ * license information.
  ********************************************************************/
 
 #ifndef CL_COMMON_H

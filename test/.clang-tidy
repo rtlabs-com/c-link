@@ -1,0 +1,53 @@
+# Adjustments of clang-tidy settings for test code (written in C++)
+# See the .clang-tidy file in parent directory
+#
+# Do not use in-line comments
+#
+# Notes
+# "cppcoreguidelines-pro-type-vararg" and "hicpp-vararg" are for snprintf
+#
+# For EXPECT_DEATH() in Google Test:
+#  * cert-err33-c
+#  * cppcoreguidelines-avoid-goto
+#  * hicpp-avoid-goto
+#  * misc-const-correctness
+---
+Checks: "
+-cert-err33-c,
+-cert-err58-cpp,
+-cppcoreguidelines-avoid-c-arrays,
+-cppcoreguidelines-avoid-const-or-ref-data-members,
+-cppcoreguidelines-avoid-goto,
+-cppcoreguidelines-avoid-non-const-global-variables,
+-cppcoreguidelines-macro-usage,
+-cppcoreguidelines-no-malloc,
+-cppcoreguidelines-non-private-member-variables-in-classes,
+-cppcoreguidelines-owning-memory,
+-cppcoreguidelines-pro-bounds-array-to-pointer-decay,
+-cppcoreguidelines-pro-bounds-constant-array-index,
+-cppcoreguidelines-pro-bounds-pointer-arithmetic,
+-cppcoreguidelines-pro-type-cstyle-cast,
+-cppcoreguidelines-pro-type-vararg,
+-fuchsia-default-arguments-calls,
+-fuchsia-statically-constructed-objects,
+-google-readability-casting,
+-hicpp-avoid-c-arrays,
+-hicpp-avoid-goto,
+-hicpp-no-array-decay,
+-hicpp-no-malloc,
+-hicpp-vararg,
+-misc-non-private-member-variables-in-classes,
+-misc-const-correctness,
+-modernize-avoid-c-arrays,
+"
+InheritParentConfig: true
+CheckOptions:
+  - key: readability-function-cognitive-complexity.Threshold
+    value: "1200"
+  - key: readability-function-size.StatementThreshold
+    value: "2000"
+  - key: hicpp-function-size.StatementThreshold
+    value: "2000"
+  - key: google-readability-function-size.StatementThreshold
+    value: "2000"
+---

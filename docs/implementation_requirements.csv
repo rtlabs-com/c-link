@@ -1,0 +1,228 @@
+ID,Requirement,Specification
+REQ_CL_CAPACITY_01,Max 64 slave stations (on each subnet),BAP-C2010ENG-001 5.1.3
+REQ_CL_CAPACITY_02,Max one master station (on each subnet),BAP-C2010ENG-001 5.1.3
+REQ_CL_CAPACITY_03,Total number of occupied slaves for all groups is 64,BAP-C2010ENG-004 10.3.1.10.2.5.08
+REQ_CL_DEPLOYMENT_01,It should be possible to run a master stack and a slave stack in the same binary,PROJECT
+REQ_CL_PARAMETERID_01,Same parameterID is used in all groups,BAP-C2010ENG-004 10.3.1.10.2.5.07
+REQ_CL_PHY_01,Physical layer is Ethernet (IEE802.3),BAP-C2010ENG-006 4
+REQ_CL_PHY_02,Ethernet speed is 100 Mbit/s 100BASE-TX (Optionally 10 Mbit/s and 1000 Mbit/s),BAP-C2010ENG-006 4.1
+REQ_CL_PHY_03,Line topology (devices with at least two Ethernet ports and a switch) is optional,BAP-C2010ENG-006 4.1
+REQ_CL_PROTOCOL_01,Cyclic data use same format as SLMP in binary mode,BAP-C2010ENG-001 5.1.3
+REQ_CL_PROTOCOL_02,"Little endian is used by each element, where element is one point for Rww/Rwr and 16 points for RY/RX.",BAP-C2010ENG-001 5.3.1 a) 1)
+REQ_CL_PROTOCOL_03,RequestPDO reserved1 should have value 0x5000,BAP-C2010ENG-004 10.3.1.01
+REQ_CL_PROTOCOL_04,RequestPDO reserved2 should have value 0x00,BAP-C2010ENG-004 10.3.1.02
+REQ_CL_PROTOCOL_05,RequestPDO reserved3 should have value 0xFF,BAP-C2010ENG-004 10.3.1.03
+REQ_CL_PROTOCOL_06,RequestPDO reserved4 should have value 0x03FF,BAP-C2010ENG-004 10.3.1.04
+REQ_CL_PROTOCOL_07,RequestPDO reserved5 should have value 0x00,BAP-C2010ENG-004 10.3.1.05
+REQ_CL_PROTOCOL_08,RequestPDO dl is the length of the PDU from reserved6,BAP-C2010ENG-004 10.3.1.06
+REQ_CL_PROTOCOL_09,RequestPDO reserved6 should have value 0x0000,BAP-C2010ENG-004 10.3.1.07
+REQ_CL_PROTOCOL_10,RequestPDO command should have value 0x0E70 and subcommand should have value 0x0000,BAP-C2010ENG-004 10.3.1.08
+REQ_CL_PROTOCOL_11,CyclicTransmission reserved1 should have value 0x0000,BAP-C2010ENG-004 10.3.1.10.2.2
+REQ_CL_PROTOCOL_12,CyclicTransmission reserved2 should have value 0,BAP-C2010ENG-004 10.3.1.10.2.3.3
+REQ_CL_PROTOCOL_13,MasterLocalUnitInfo bit 0 is 0 when master application is stopped and 1 when running,BAP-C2010ENG-004 10.3.1.10.2.4.2.1
+REQ_CL_PROTOCOL_14,MasterLocalUnitInfo bit 1 is 0 when stop cause is error and 1 when stop case is user operation. Valid for protocol version 2.,BAP-C2010ENG-004 10.3.1.10.2.4.2.1
+REQ_CL_PROTOCOL_15,MasterLocalUnitInfo bit 1 is 0. Valid for protocol version 1.,BAP-C2010ENG-004 10.3.1.10.2.4.2.1
+REQ_CL_PROTOCOL_16,MasterLocalUnitInfo bit 2 to 15: Fixed to 0,BAP-C2010ENG-004 10.3.1.10.2.4.2.1
+REQ_CL_PROTOCOL_17,MasterNoticeInfo reserved should have value 0x00,BAP-C2010ENG-004 10.3.1.10.2.4.2.2
+REQ_CL_PROTOCOL_18,Clockinfo is Unix time with milliseconds,BAP-C2010ENG-004 10.3.1.10.2.4.2.3
+REQ_CL_PROTOCOL_19,MasterStationId is the IP address in range 0.0.0.1 to 223.255.255.254,BAP-C2010ENG-004 10.3.1.10.2.5.01
+REQ_CL_PROTOCOL_20,Default group number is 1,BAP-C2010ENG-004 10.3.1.10.2.5.02
+REQ_CL_PROTOCOL_21,Request contains data only for slaves in a specific group.,BAP-C2010ENG-004 10.3.1.10.2.5.02
+REQ_CL_PROTOCOL_22,The group number is 1 to 64,BAP-C2010ENG-004 10.3.1.10.2.5.02
+REQ_CL_PROTOCOL_23,CyclicInfo reserved3 value is 0x00,BAP-C2010ENG-004 10.3.1.10.2.5.03
+REQ_CL_PROTOCOL_24,"At constant link time, the timeoutValue is the link scan period.",BAP-C2010ENG-004 10.3.1.10.2.5.05
+REQ_CL_PROTOCOL_25,Timeout value 0 corresponds to 500 ms,BAP-C2010ENG-004 10.3.1.10.2.5.05
+REQ_CL_PROTOCOL_26,Timeout value is in the range 1 to 65535 ms,BAP-C2010ENG-004 10.3.1.10.2.5.05
+REQ_CL_PROTOCOL_27,"Without constant link time, the timeoutValue is the cyclic transmission response waiting period.",BAP-C2010ENG-004 10.3.1.10.2.5.05
+REQ_CL_PROTOCOL_28,ParallelOffTimeoutCount is in the range 1 to 65535,BAP-C2010ENG-004 10.3.1.10.2.5.06
+REQ_CL_PROTOCOL_29,ParallelOffTimeoutCount value 0 corresponds to 3 times,BAP-C2010ENG-004 10.3.1.10.2.5.06
+REQ_CL_PROTOCOL_30,SlaveTotalOccupiedStationCount is the total number of slave stations belonging to one group,BAP-C2010ENG-004 10.3.1.10.2.5.08
+REQ_CL_PROTOCOL_31,SlaveTotalOccupiedStationCount should be 1 to 16,BAP-C2010ENG-004 10.3.1.10.2.5.08
+REQ_CL_PROTOCOL_32,CyclicInfo reserved4 should have value 0x0000,BAP-C2010ENG-004 10.3.1.10.2.5.10
+REQ_CL_PROTOCOL_33,"At cyclic transmission stop direction, the slave station ID is set to 0.0.0.0",BAP-C2010ENG-004 10.3.1.10.2.5.11
+REQ_CL_PROTOCOL_34,"For slave stations occupying multiple stations, the value 255.255.255.255 are used as the second station and later",BAP-C2010ENG-004 10.3.1.10.2.5.11
+REQ_CL_PROTOCOL_35,Only SlaveStationIds belonging to the group are included in the corresponding request,BAP-C2010ENG-004 10.3.1.10.2.5.11
+REQ_CL_PROTOCOL_36,SlaveStationId is the IP address in range 0.0.0.1 to 223.255.255.254,BAP-C2010ENG-004 10.3.1.10.2.5.11
+REQ_CL_PROTOCOL_37,The position of SlaveStationId is the slave station number (starting from 1 in each group),BAP-C2010ENG-004 10.3.1.10.2.5.11
+REQ_CL_PROTOCOL_38,Rww cyclic data is 64 bytes x total number of occupied station in group,BAP-C2010ENG-004 10.3.1.10.2.5.12
+REQ_CL_PROTOCOL_39,RY cyclic data is 8 bytes x total number of occupied station in group,BAP-C2010ENG-004 10.3.1.10.2.5.13
+REQ_CL_PROTOCOL_40,ResponsePDO reserved1 should have value 0xD000,BAP-C2010ENG-004 10.3.2.1
+REQ_CL_PROTOCOL_41,ResponsePDO dl should indicate length from reserved6 to the end,BAP-C2010ENG-004 10.3.2.6
+REQ_CL_PROTOCOL_42,ResponsePDO reserved6 should have value 0x0000,BAP-C2010ENG-004 10.3.2.7
+REQ_CL_PROTOCOL_43,OffsetAddrInfo reserved1 should have value 0,BAP-C2010ENG-004 10.3.2.8.2.3.3
+REQ_CL_PROTOCOL_44,VendorCode given by CLPA should be used,BAP-C2010ENG-004 10.3.2.8.2.4.2.1
+REQ_CL_PROTOCOL_45,SlaveNoticeInfo reserved1 should have value 0x0000,BAP-C2010ENG-004 10.3.2.8.2.4.2.2
+REQ_CL_PROTOCOL_46,ModelCode should be used,BAP-C2010ENG-004 10.3.2.8.2.4.2.3
+REQ_CL_PROTOCOL_47,EquipmentVer should be used,BAP-C2010ENG-004 10.3.2.8.2.4.2.4
+REQ_CL_PROTOCOL_48,SlaveLocalUnitInfo bit 0 is 1 when slave is operating and 0 when slave is stopped,BAP-C2010ENG-004 10.3.2.8.2.4.2.5
+REQ_CL_PROTOCOL_49,SlaveLocalUnitInfo bit 1 to 15 are fixed to 0,BAP-C2010ENG-004 10.3.2.8.2.4.2.5
+REQ_CL_PROTOCOL_50,"SlaveErrCode value 0x0000 indicates normal states, other indicates error states",BAP-C2010ENG-004 10.3.2.8.2.4.2.6
+REQ_CL_PROTOCOL_51,localManagementInfo should be used,BAP-C2010ENG-004 10.3.2.8.2.4.2.7
+REQ_CL_PROTOCOL_52,SlaveID is the IP address of the slave,BAP-C2010ENG-004 10.3.2.8.2.5.1
+REQ_CL_PROTOCOL_53,CyclicInfo reserved2 should have value 0x00,BAP-C2010ENG-004 10.3.2.8.2.5.3
+REQ_CL_PROTOCOL_54,Mask partially reserved parts when receiving,BAP-C3003ENG-001 5.2.4
+REQ_CL_PROTOCOL_55,Reserved areas should be ignored when receiving,"BAP-C3003ENG-001 5.2.4,BAP-C2010ENG-001 5.2.4 a)"
+REQ_CL_PROTOCOL_56,Reserved areas should be set to 0 when sending,BAP-C3003ENG-001 5.2.4
+REQ_CL_SLMP_01,Node search and set IP address use same format as SLMP in binary mode with a serial number added,BAP-C2010ENG-001 5.1.3
+REQ_CL_SLMP_02,Node search uses SLMP command 0x0E30,BAP-C2010ENG-001 5.7
+REQ_CL_SLMP_03,Set IP address uses SLMP command 0x0E31,BAP-C2010ENG-001 5.7
+REQ_CL_SLMP_04,Fixed SLMP values should be ignored on receiving side,BAP-C2010ENG-001 5.7.1
+REQ_CL_SLMP_05,For SLMP the communication port number of target unit should be 0xFFFF,BAP-C2010ENG-001 5.7.1
+REQ_CL_SLMP_06,For SLMP the communication protocol settings should be 1,BAP-C2010ENG-001 5.7.1
+REQ_CL_SLMP_07,For SLMP the default gateway should be 0xFFFFFFFF,BAP-C2010ENG-001 5.7.1
+REQ_CL_SLMP_08,For SLMP the host name size should be 0,BAP-C2010ENG-001 5.7.1
+REQ_CL_SLMP_09,For SLMP the IP address of target unit should be 0xFFFFFFFF,BAP-C2010ENG-001 5.7.1
+REQ_CL_SLMP_10,For SLMP the IP address size should be 4,BAP-C2010ENG-001 5.7.1
+REQ_CL_SLMP_11,For SLMP the server communication port number should be 61451,BAP-C2010ENG-001 5.7.1
+REQ_CL_STATUSBIT_01,The cyclic status bit for a slave with multiple occupied stations is the first bit,BAP-C2010ENG-004 10.3.1.10.2.5.09
+REQ_CL_STDLIB_01,"On platforms where they are available, use memset_s, memcpy_s and snprintf_s instead of memset, memcpy and snprintf.",PROJECT
+REQ_CL_SUBNET_01,Different masters (and their corresponding slaves) should use different subnets,BAP-C2010ENG-001 5.3.1 c) 04)
+REQ_CL_SUBNET_02,Master and its slaves should use same subnet,BAP-C2010ENG-001 5.3.1 c) 04)
+REQ_CL_UDP_01,UDP port 61450 is used for cyclic data,BAP-C2010ENG-001 5.1.3
+REQ_CL_UDP_02,UDP port 61451 is used for node search and set IP address,BAP-C2010ENG-001 5.1.3
+REQ_CL_USER_01,Model code needs to be unique (for each vendor).,BAP-C3003ENG-001 5.2.1
+REQ_CL_USER_02,Do not use error codes in the range 0xC000 to 0xCFFF,BAP-C3003ENG-001 5.2.2
+REQ_CL_VERSION_01,Also lower protocol versions should be implemented,BAP-C2010ENG-001 5.3.1 a) 3)
+REQ_CLM_ARBITR_01,Master performs master station arbitration before sending cyclic data,BAP-C2010ENG-004 08.1 a)
+REQ_CLM_ARBITR_02,"If no other masters were detected during arbitration, the master will send cyclic data","BAP-C2010ENG-004 08.1 a), BAP-C2010ENG-004 08.2 a)"
+REQ_CLM_ARBITR_03,Master arbitration for 2500 ms,BAP-C2010ENG-004 08.2 a) 1)
+REQ_CLM_CAPACITY_01,Master should support 32 RWr words for each of 64 slave stations (2048 16-bit words),BAP-C2010ENG-001 5.1.3
+REQ_CLM_CAPACITY_02,Master should support 32 RWw words for each of 64 slave stations (2048 16-bit words),BAP-C2010ENG-001 5.1.3
+REQ_CLM_CAPACITY_03,Master should support 64 RX bits for each of 64 slave stations (4096 bits),BAP-C2010ENG-001 5.1.3
+REQ_CLM_CAPACITY_04,Master should support 64 RY bits for each of 64 slave stations (4096 bits),BAP-C2010ENG-001 5.1.3
+REQ_CLM_CAPACITY_05,"Master should support slaves occupying one to 16 stations (4 mandatory, 16 optional)","BAP-C2010ENG-001 5.1.3, BAP-C2010ENG-004 10.3.1.10.2.5.08"
+REQ_CLM_COMMUNIC_01,Master should send cyclic messages (including status) also when the application is stopped,BAP-C2010ENG-001 5.3.1 a) 2)
+REQ_CLM_COMMUNIC_02,Master ignores responses from slaves that not are expected to respond,BAP-C2010ENG-001 5.3.1 c) 19)
+REQ_CLM_COMMUNIC_03,"At second link scan, the communication is continued with the slaves that have responded",BAP-C2010ENG-004 08.3 b) 02)
+REQ_CLM_COMMUNIC_04,"When a slave returns, the master will enable the cyclic status bit from next link scan, regardless of the frame sequence number.",BAP-C2010ENG-004 08.3 b) 04)
+REQ_CLM_COMMUNIC_05,"When running cyclic data, a master will ignore requests from other masters.",BAP-C2010ENG-004 08.3 b) 07)
+REQ_CLM_CONFIGURATION_01,The master configuration should include which IP address to use (not which Ethernet interface name to use),PROJECT
+REQ_CLM_CONFORMANCE_01,The master station application status (stopped by user etc) should be correct in the request frame. Use 3 slaves.,BAP-C0401ENG-044 1.1 (1)
+REQ_CLM_CONFORMANCE_02,"Master should send (RY, Rww) and receive (RX, Rwr) cyclic data. Use a group with 3 slaves.",BAP-C0401ENG-044 1.2 (1)
+REQ_CLM_CONFORMANCE_03,Master should send and receive cyclic data to/from a slave occupying max number of slave stations. ,BAP-C0401ENG-044 1.2 (2)
+REQ_CLM_CONFORMANCE_04,Master should be able to start and stop cyclic transmission from individual slaves. Use 3 slaves in one group.,BAP-C0401ENG-044 1.3 (1)
+REQ_CLM_CONFORMANCE_05,Master should be able to start and stop cyclic transmission from individual groups. Use 3 slaves in two groups.,BAP-C0401ENG-044 1.3 (2)
+REQ_CLM_CONFORMANCE_06,Master should detect that a slave is lost. Communication continues in the rest of the group. Verify the timeout time.,BAP-C0401ENG-044 1.3 (3)
+REQ_CLM_CONFORMANCE_07,"If all slaves are disconnected, the master should send requests with an interval corresponding to the response waiting time. Start with one slave and then disconnect it.",BAP-C0401ENG-044 1.3 (4)
+REQ_CLM_CONFORMANCE_08,A disconnected slave can be reconnected. Use one slave.,BAP-C0401ENG-044 1.3 (5)
+REQ_CLM_CONFORMANCE_09,Master disconnects a slave when it receives the end code 0xCFFF. Verify no waiting time. Use one slave.,BAP-C0401ENG-044 1.3 (6)
+REQ_CLM_CONFORMANCE_10,Master should not be interrupted by requests from other masters. Use one slave and one additional master.,BAP-C0401ENG-044 1.3 (7)
+REQ_CLM_CONFORMANCE_11,Master should be able to use constant link scan. Verify link scan time. Use one slave.,BAP-C0401ENG-044 1.3 (8)
+REQ_CLM_CONFORMANCE_12,Master should detect master duplication during arbitration. Use one slave and one additional master.,BAP-C0401ENG-044 1.4 (1)
+REQ_CLM_CONFORMANCE_13,Master should react to master station duplication alarm from slave. Use one slave and one additional master.,BAP-C0401ENG-044 1.4 (2)
+REQ_CLM_CONFORMANCE_14,Master should react to slave duplication. Use one slave (with error generation feature).,BAP-C0401ENG-044 1.4 (3)
+REQ_CLM_CONFORMANCE_15,Measure master request time. Use one slave.,BAP-C0401ENG-044 1.5 (1)
+REQ_CLM_CONFORMANCE_16,The master should run for 12 hours without errors (aging test). Use one slave.,BAP-C0401ENG-044 2 (1)
+REQ_CLM_DEPLOYMENT_01,It should be possible to run several master stacks in the same binary,PROJECT
+REQ_CLM_DIAGNOSIS_01,"User should be able to read information on cyclic transmission status, slave station, link scan times etc",BAP-C3003ENG-001 3.1.7
+REQ_CLM_DIAGNOSIS_02,User should be able to read out slave station errors,BAP-C3003ENG-001 5.3.3
+REQ_CLM_ERROR_01,Master forces slave to disconnect if it receives error response other than master station duplication. See also REQ_CLM_ERROR_06,BAP-C2010ENG-001 5.3.1 c) 20)
+REQ_CLM_ERROR_02,Master should disconnect slave if the slave sends responses with wrong number of occupied stations,BAP-C2010ENG-001 5.3.1 c) 21)
+REQ_CLM_ERROR_03,A master who has been stopped by a master station duplication error response will restart after its parameter has been changed.,BAP-C2010ENG-004 08.3 b) 07)
+REQ_CLM_ERROR_04,Master will not send any further cyclic data after receiving master station duplication error response. ,BAP-C2010ENG-004 08.3 b) 07)
+REQ_CLM_ERROR_05,Master stops cyclic transmission if it receives multiple responses from same slave ID during the same link scan (slave duplication),BAP-C2010ENG-004 08.3 b) 10)
+REQ_CLM_ERROR_06,Master will disconnect corresponding slave if it receives end code other than 0x0000. See also REQ_CLM_ERROR_01,"BAP-C2010ENG-004 08.3 b) 11), BAP-C2010ENG-004 10.3.2.8.2.2, BAP-C2010ENG-001 5.3.1 b) 1)"
+REQ_CLM_ERROR_07,Master forces slave to disconnect if no valid response is received within timeout period x number of consecutive timeouts.,BAP-C2010ENG-004 10.3.1.10.2.5.05
+REQ_CLM_GROUPS_01,Master handles groups independently,BAP-C2010ENG-004 08.3 a) 07)
+REQ_CLM_GROUPS_02,Master should verify group number in response from slave,BAP-C2010ENG-004 10.3.2.8.2.5.2
+REQ_CLM_PARAMETERID_01,The parameter identification number should not be the same after each reset,"BAP-C2010ENG-001 5.3.1 c) 12), BAP-C2010ENG-004 10.3.1.10.2.5.07"
+REQ_CLM_PARAMETERID_02,Master station should increase the parameter identification number when changing number of slaves or the slave IDs,"BAP-C2010ENG-001 5.3.1 c) 12), BAP-C2010ENG-004 10.3.1.10.2.5.07, BAP-C2010ENG-004 10.3.1.10.2.5.11"
+REQ_CLM_PARAMETERID_03,Parameter identification number should not change when slave ID is changed to 0 as stop instruction.,"BAP-C3003ENG-001 5.3.1, BAP-C2010ENG-004 10.3.1.10.2.5.11"
+REQ_CLM_SEQUENCE_01,Frame sequence number is 0 for first request,BAP-C2010ENG-004 10.3.1.10.2.5.04
+REQ_CLM_SEQUENCE_02,Frame sequence number is circulated through 0x0001 to 0xFFFF,BAP-C2010ENG-004 10.3.1.10.2.5.04
+REQ_CLM_SEQUENCE_03,Master increments frame sequence number for each request,BAP-C2010ENG-004 10.3.1.10.2.5.04
+REQ_CLM_STATUSBIT_01,"When a slave is disconnected from network, the master should disable the transmission bit, use the slave ID and put 0 as cyclic data in request",BAP-C2010ENG-001 5.3.1 c) 23)
+REQ_CLM_STATUSBIT_02,"When a slave is returned to network, the master should enable the transmission bit, use the slave ID and put valid cyclic data in request",BAP-C2010ENG-001 5.3.1 c) 23)
+REQ_CLM_STATUSBIT_03,"When a slave is set as cyclic transmission stop, the master should send 0 as slave ID and 0 as cyclic data. Cyclic transmission bit is off from next link scan.","BAP-C2010ENG-001 5.3.1 c) 23), BAP-C2010ENG-004 08.3 b) 05), BAP-C2010ENG-004 10.3.1.10.2.5.09"
+REQ_CLM_STATUSBIT_04,Master handles response cyclic data as valid when corresponding bit is on and sequence number is correct,"BAP-C2010ENG-004 08.3 a), BAP-C2010ENG-004 10.3.2.8.2.5.4, BAP-C2010ENG-004 10.3.2.8.2.5.5, BAP-C2010ENG-004 10.3.2.8.2.5.6"
+REQ_CLM_STATUSBIT_05,Master turns off all transmission bits and sets all data to 0 in the first request,BAP-C2010ENG-004 08.3 b) 01)
+REQ_CLM_STATUSBIT_06,Master turns on the transmission bit (and stores response data) for a slave that has responded,BAP-C2010ENG-004 08.3 b) 01)
+REQ_CLM_STATUSBIT_07,"When a slave no longer responds for the consecutive number of timeouts, the master will turn off the cyclic status bit.",BAP-C2010ENG-004 08.3 b) 03)
+REQ_CLM_STATUSBIT_08,"When using cyclic transmission stopped, the master will turn off the cyclic status bit from next link scan",BAP-C2010ENG-004 08.3 b) 05)
+REQ_CLM_STATUSBIT_09,Master handles response cyclic data as invalid when corresponding bit is off,"BAP-C2010ENG-004 10.3.2.8.2.5.5, BAP-C2010ENG-004 10.3.2.8.2.5.6"
+REQ_CLM_TIMING_01,Constant link time is set in master parameters,"BAP-C2010ENG-001 5.3.1 c) 08), BAP-C2010ENG-004 08.3 b) 06)"
+REQ_CLM_TIMING_02,Constant link time should be 1 to 2000 ms,BAP-C2010ENG-001 5.3.1 c) 09)
+REQ_CLM_TIMING_03,"When multiple groups exist, each group has the same constant link scan ??",BAP-C2010ENG-001 5.3.1 c) 09)
+REQ_CLM_TIMING_04,"When using constant link time, the response waiting time is the constant link time minus the processing time of the master",BAP-C2010ENG-001 5.3.1 c) 10)
+REQ_CLM_TIMING_05,"Without constant link time, the response waiting time is adjustable in the master parameters",BAP-C2010ENG-001 5.3.1 c) 10)
+REQ_CLM_TIMING_06,"At constant link time, the master waits until the link time elapses",BAP-C2010ENG-004 08.3 a) 05)
+REQ_CLM_TIMING_07,"During first link scan, the time is extended if not all slaves respond (cyclic response waiting time)",BAP-C2010ENG-004 08.3 b) 02)
+REQ_CLM_TIMING_08,"If there are no responses at all, the master will repeat the link scan using the cyclic response waiting time",BAP-C2010ENG-004 08.3 b) 02)
+REQ_CLM_TIMING_09,"When a slave no longer responds, the master will extend the link scan time. This is done for the consecutive number of timeouts given",BAP-C2010ENG-004 08.3 b) 03)
+REQ_CLM_TIMING_10,Master will not wait for disconnected slaves,BAP-C2010ENG-004 08.3 b) 11)
+REQ_CLM_UDP_01,Master sends cyclic data via directed UDP broadcast,BAP-C2010ENG-004 08.3 a) 02)
+REQ_CLM_UDP_02,It should be possible to select local broadcast or directed broadcast for sending SLMP messages,PROJECT
+REQ_CLM_VERSION_01,Master handles response in lowest protocol version of its own and the response,BAP-C2010ENG-001 5.3.1 a) 3)
+REQ_CLM_VERSION_02,Master sends request message in its own protocol version,BAP-C2010ENG-001 5.3.1 a) 3)
+REQ_CLS_CAPACITY_01,Slave should support 32 Rwr words for each of 16 slave stations (512 16-bit words),BAP-C2010ENG-001 5.1.3
+REQ_CLS_CAPACITY_02,Slave should support 32 RWw words for each of 16 slave stations (512 16-bit words),BAP-C2010ENG-001 5.1.3
+REQ_CLS_CAPACITY_03,Slave should support 64 RX bits for each of 16 slave stations (1024 bits),BAP-C2010ENG-001 5.1.3
+REQ_CLS_CAPACITY_04,Slave should support 64 RY bits for each of 16 slave stations (1024 bits),BAP-C2010ENG-001 5.1.3
+REQ_CLS_CAPACITY_05,Slave should support occupying one to 16 stations,BAP-C2010ENG-001 5.1.3
+REQ_CLS_CAPACITY_06,One slave should only have one master,BAP-C2010ENG-001 5.3.1 c) 04)
+REQ_CLS_COMMUNIC_01,Slave does not respond if its IP address not is in the request,"BAP-C2010ENG-004 08.3 a), BAP-C2010ENG-004 08.3 b) 05), BAP-C2010ENG-004 10.3.1.10.2.5.11"
+REQ_CLS_CONFIGURATION_01,The slave configuration should include which IP address to use (not which Ethernet interface name to use),PROJECT
+REQ_CLS_CONFORMANCE_01,"Slave should deliver protocol version, vendor code, model name code, device version and error code in CCIEFB response.",BAP-C0401ENG-045 1.1 (2)
+REQ_CLS_CONFORMANCE_02,"Slave should send (RX, Rwr) and receive cyclic data (RY, Rww) when occupying max number of slave stations.",BAP-C0401ENG-045 1.2 (1)
+REQ_CLS_CONFORMANCE_03,"Slave should send (RX, Rwr) and receive cyclic data (RY, Rww) when occupying min number of slave stations.",BAP-C0401ENG-045 1.2 (2)
+REQ_CLS_CONFORMANCE_04,Slave should react to master starting and stopping the cyclic data communication (it should not send response),BAP-C0401ENG-045 1.3 (1)
+REQ_CLS_CONFORMANCE_05,Slave should be able to stop the cyclic data communication,BAP-C0401ENG-045 1.3 (2)
+REQ_CLS_CONFORMANCE_06,Slave should react to master operating status (stopped by user etc).,BAP-C0401ENG-045 1.3 (3)
+REQ_CLS_CONFORMANCE_07,Slave should send an alarm (to the new master) if another master appears during cyclic communication. Continue communicating with first master.,BAP-C0401ENG-045 1.4 (1)
+REQ_CLS_CONFORMANCE_08,Slave should detect master station disconnection,BAP-C0401ENG-045 1.4 (2)
+REQ_CLS_CONFORMANCE_09,"Slave should detect slave station duplication at startup, and does not execute cyclic communication.",BAP-C0401ENG-045 1.4 (3)
+REQ_CLS_CONFORMANCE_10,Slave should send an alarm when it receives data for wrong number of occupied slave stations.,BAP-C0401ENG-045 1.4 (4)
+REQ_CLS_CONFORMANCE_11,Measure slave response time,BAP-C0401ENG-045 1.5 (1)
+REQ_CLS_CONFORMANCE_12,Slave should respond to node search. Check all fields in the response,BAP-C0401ENG-045 1.6 (1)
+REQ_CLS_CONFORMANCE_13,It should be possible to remotely set IP address of the slave. Check the response.,BAP-C0401ENG-045 1.6 (2)
+REQ_CLS_CONFORMANCE_14,The CSP+ file should have no format errors,BAP-C0401ENG-045 2.1
+REQ_CLS_CONFORMANCE_15,The CSP+ file contents should be correct,BAP-C0401ENG-045 2.2
+REQ_CLS_CONFORMANCE_16,The slave should run for 12 hours without errors (aging test).,BAP-C0401ENG-045 3.1
+REQ_CLS_CONTRMASTER_01,"When its master is undetermined, a slave should use the master station in a request as its new master","BAP-C2010ENG-001 5.3.1 c) 14), BAP-C2010ENG-004 10.3.1.10.2.5.01"
+REQ_CLS_CONTRMASTER_02,"When slave disconnects, the control master is set to undetermined",BAP-C2010ENG-004 10.3.1.10.2.5.01
+REQ_CLS_CYCLIC_01,Slave uses 64 bytes cyclic Rww data from the request for each of its occupied stations,BAP-C2010ENG-004 10.3.1.10.2.5.12
+REQ_CLS_CYCLIC_02,Slave uses cyclic data in the request at a position determined by its slave station number,"BAP-C2010ENG-004 10.3.1.10.2.5.12, BAP-C2010ENG-004 10.3.1.10.2.5.13"
+REQ_CLS_CYCLIC_03,Slave uses 8 bytes cyclic RY data from the request for each of its occupied stations,BAP-C2010ENG-004 10.3.1.10.2.5.13
+REQ_CLS_ERROR_01,Slave should respond with error if it not can handle the number of occupied stations given in the request. See also REQ_CLS_ERROR_10, BAP-C2010ENG-001 5.3.1 c) 21)
+REQ_CLS_ERROR_02,"When sending an error message, the slave should fill the cyclic data with 0 (for correct number of occupied stations)",BAP-C2010ENG-001 5.3.1 c) 26)
+REQ_CLS_ERROR_03,"When sending an error message, the slave should use at least one station of cyclic data when master is undetermined",BAP-C2010ENG-001 5.3.1 c) 26)
+REQ_CLS_ERROR_04,"Slave should only use end codes 0x0000, 0xCFE0, 0xCFE1, 0xCFF0, 0xCFFF",BAP-C2010ENG-001 5.6
+REQ_CLS_ERROR_05,Slave will resend the disconnection notification if the next request has the cyclic status bit on,BAP-C2010ENG-004 08.3 b) 11)
+REQ_CLS_ERROR_06,Slave should send end code 0xCFFF when it would like to disconnect (including user operations),"BAP-C2010ENG-004 08.3 b) 11), BAP-C2010ENG-004 13.2.2"
+REQ_CLS_ERROR_07,"When slave receives request from other master than the control master, it responds to the other master with master station duplication",BAP-C2010ENG-004 10.3.1.10.2.5.01
+REQ_CLS_ERROR_08,Slave should send end code 0xCFE0 to indicate master station duplication,BAP-C2010ENG-004 13.2.2
+REQ_CLS_ERROR_09,Slave should send end code 0xCFF0 to indicate error in slave,BAP-C2010ENG-004 13.2.2
+REQ_CLS_ERROR_10,Slave should send end code 0xCFE1 to indicate wrong number of occupied slave stations. See also REQ_CLS_ERROR_01,"BAP-C2010ENG-004 13.2.2, BAP-C2010ENG-004 10.3.1.10.2.5.11"
+REQ_CLS_ERROR_11,Slave should send end code 0xCFF0 when it detects communication load limit,BAP-C3003ENG-001 5.4.1
+REQ_CLS_ERROR_12,"At communication errors, set the end code in the response",BAP-C3003ENG-001 5.4.2
+REQ_CLS_ERROR_13,"At slave specific errors when communication is available, set error code in slave station notification",BAP-C3003ENG-001 5.4.2
+REQ_CLS_ERROR_14,"At slave specific errors when communication not is available, set error code in slave station notification and set end code to 0xCFF0",BAP-C3003ENG-001 5.4.2
+REQ_CLS_ERROR_15,When a slave detects slave station duplication it should report it to the slave application.,BAP-C2010ENG-004 08.3 b) 10)
+REQ_CLS_GROUPS_01,Slave finds its group number by looking only in the message with its IP address,BAP-C2010ENG-004 10.3.1.10.2.5.02
+REQ_CLS_GROUPS_02,A slave belongs only to one group.,"BAP-C2010ENG-004 10.3.1.10.2.5.02, BAP-C2010ENG-004 10.3.1.10.2.5.11"
+REQ_CLS_GROUPS_03,Slave puts its group number in the response,"BAP-C2010ENG-004 10.3.1.10.2.5.02, BAP-C2010ENG-004 10.3.2.8.2.5.2"
+REQ_CLS_PARAMETERID_01,Slave does not have to recalculate data offset if the parameter identification number is the same as in last frame,BAP-C2010ENG-001 5.3.1 a) 3)
+REQ_CLS_PARAMETERID_02,Slave should recalculate data offset when it receives first cyclic data (while master is undetermined),BAP-C2010ENG-001 5.3.1 a) 3)
+REQ_CLS_PARAMETERID_03,Slave should recalculate data offset when parameter identification number has changed,BAP-C2010ENG-001 5.3.1 a) 3)
+REQ_CLS_PARAMETERID_04,Slave should recalculate data offset when sequence number is 0,BAP-C2010ENG-001 5.3.1 a) 3)
+REQ_CLS_PARAMETERID_05,A slave can discard requests to other groups as long as the parameterID not has changed,BAP-C2010ENG-004 10.3.1.10.2.5.07
+REQ_CLS_SEQUENCE_01,Slave puts the frame sequence number in the response,"BAP-C2010ENG-004 10.3.1.10.2.5.04, BAP-C2010ENG-004 10.3.2.8.2.5.4"
+REQ_CLS_SLMP_IP_01,Slave should set IP address when receiving command,BAP-C3003ENG-001 3.1.5
+REQ_CLS_STATIONNUMBER_01,Slave calculates number of occupied stations from the number of subsequent 255.255.255.255 in the slaveID field,BAP-C2010ENG-004 10.3.1.10.2.5.11
+REQ_CLS_STATIONNUMBER_02,Slave calculates stationnumber from position of its slaveID,BAP-C2010ENG-004 10.3.1.10.2.5.11
+REQ_CLS_STATIONNUMBER_03,"When occupying multiple stations, the slave station number is the decided by the first",BAP-C2010ENG-004 10.3.1.10.2.5.11
+REQ_CLS_STATUSBIT_01,Slave sends cyclic response data set to 0 when corresponding bit is off,"BAP-C2010ENG-001 5.3.1 c) 18), BAP-C2010ENG-004 10.3.1.10.2.5.09"
+REQ_CLS_STATUSBIT_02,Slave handles request cyclic data as invalid when corresponding bit is off (0 data is stored),"BAP-C2010ENG-001 5.3.1 c) 18), BAP-C2010ENG-004 10.3.1.10.2.5.09, BAP-C2010ENG-004 10.3.1.10.2.5.12, , BAP-C2010ENG-004 10.3.1.10.2.5.13"
+REQ_CLS_STATUSBIT_03,Slave handles request cyclic data as valid when corresponding bit is on,"BAP-C2010ENG-004 08.3 a), BAP-C2010ENG-004 10.3.1.10.2.5.09"
+REQ_CLS_STATUSBIT_04,Slave should not respond to the request if the cyclic status bit is set when the master is undetermined (slave duplication),BAP-C2010ENG-004 08.3 b) 10)
+REQ_CLS_STATUSBIT_05,Slave sends valid cyclic response data when corresponding bit is on,BAP-C2010ENG-004 10.3.1.10.2.5.09
+REQ_CLS_TIMING_01,A slave considers itself disconnected when it not has received requests for timeout period x number of consecutive timeouts.,"BAP-C2010ENG-004 08.3 b) 08), BAP-C2010ENG-004 10.3.1.10.2.5.05"
+REQ_CLS_UDP_01,Slave sends cyclic data via UDP unicast,BAP-C2010ENG-004 08.3 a) 04)
+REQ_CLS_UDP_02,Use UDP destination port 45237 for SLMP node search ??,BAP-C3003ENG-001 5.2.3
+REQ_CLS_UDP_03,It should be possible to select local broadcast or directed broadcast for sending SLMP messages,PROJECT
+REQ_CLS_USER_01,Slave should operate safely when master is stopped,BAP-C3003ENG-001 5.4.3
+REQ_CLS_VERSION_01,Slave handle request message in lowest protocol version of its own and the request,BAP-C2010ENG-001 5.3.1 a) 3)
+REQ_CLS_VERSION_02,Slave sends response in its own protocol version,BAP-C2010ENG-001 5.3.1 a) 3)
+REQ_CLS_VERSION_03,"When masterLocalUnit info is stopped by user in protocol version 2, the slave stops or continues its operation according to setting of its own",BAP-C3003ENG-001 3.2.1
+REQ_CLS_VERSION_04,"When masterLocalUnit info is stopped due to error in protocol version 2, the slave stops its operation",BAP-C3003ENG-001 3.2.1
+REQ_CLS_VERSION_05,"When masterLocalUnit info is stopped in protocol version 1, the slave holds or clear output according to setting of its own",BAP-C3003ENG-001 3.2.1

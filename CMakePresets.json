@@ -1,0 +1,59 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "xmc48relax",
+            "generator": "Ninja",
+            "binaryDir": "build.${presetName}",
+            "toolchainFile": "cmake/tools/toolchain/rt-kernel.cmake",
+            "cacheVariables": {
+                "BUILD_TESTING": false
+            },
+            "environment": {
+                "BSP": "xmc48relax"
+            }
+        },
+        {
+            "name": "linux",
+            "generator": "Ninja",
+            "binaryDir": "build.${presetName}",
+            "cacheVariables": {
+                "BUILD_TESTING": true,
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "docs",
+            "generator": "Ninja",
+            "binaryDir": "build.${presetName}"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "linux",
+            "configurePreset": "linux"
+        },
+        {
+            "name": "xmc48relax",
+            "configurePreset": "xmc48relax"
+        },
+        {
+            "name": "docs",
+            "targets": "sphinx-html",
+            "configurePreset": "docs"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "linux",
+            "configurePreset": "linux",
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
+        }
+    ]
+}

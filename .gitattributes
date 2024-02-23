@@ -1,8 +1,23 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
+# Custom for Visual Studio
+*.cs     diff=csharp
+
+# Standard to msysgit
+*.doc	 diff=astextplain
+*.DOC	 diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot  diff=astextplain
+*.DOT  diff=astextplain
+*.pdf  diff=astextplain
+*.PDF	 diff=astextplain
+*.rtf	 diff=astextplain
+*.RTF	 diff=astextplain
+
 # Do not perform LF normalization on bash scripts
 *.service text eol=lf
 *.raspberrypi text eol=lf
-bin/set_ip_address_netmask text eol=lf
-bin/set_cclink_leds text eol=lf
+src/ports/linux/set_ip_address_netmask text eol=lf
+src/ports/linux/set_cclink_leds text eol=lf
